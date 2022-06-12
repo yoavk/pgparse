@@ -28,6 +28,11 @@ EXT_MODULES = [
 class BuildExt(build_ext.build_ext):
     def run(self):
         return_code = subprocess.call(
+            ['protoc', '-I', LIBPG_QUERY, '--python_out', '.', f'{LIBPG_QUERY}/protobuf/pg_query.proto'])
+        if return_code:
+            sys.stderr.write('Failed to run protoc')
+            sys.exit(return_code)
+        return_code = subprocess.call(
             ['make', '-C', LIBPG_QUERY, 'build'])
         if return_code:
             sys.stderr.write('libpg_query failed to build')
