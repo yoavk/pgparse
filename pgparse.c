@@ -1693,7 +1693,6 @@ static const char __pyx_k_prepare[] = "__prepare__";
 static const char __pyx_k_function[] = "function";
 static const char __pyx_k_pbbarray[] = "pbbarray";
 static const char __pyx_k_position[] = "position";
-static const char __pyx_k_protobuf[] = "protobuf";
 static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_metaclass[] = "__metaclass__";
 static const char __pyx_k_normalize[] = "normalize";
@@ -1707,6 +1706,7 @@ static const char __pyx_k_parse_pgsql[] = "parse_pgsql";
 static const char __pyx_k_pgparse_pyx[] = "pgparse.pyx";
 static const char __pyx_k_PGQueryError[] = "PGQueryError";
 static const char __pyx_k_pg_query_pb2[] = "pg_query_pb2";
+static const char __pyx_k_pgparse_proto[] = "pgparse_proto";
 static const char __pyx_k_protobuf_parse[] = "protobuf_parse";
 static const char __pyx_k_protobuf_deparse[] = "protobuf_deparse";
 static const char __pyx_k_serialized_bytes[] = "serialized_bytes";
@@ -1748,10 +1748,10 @@ static PyObject *__pyx_n_s_parse_tree;
 static PyObject *__pyx_n_s_pbbarray;
 static PyObject *__pyx_n_s_pg_query_pb2;
 static PyObject *__pyx_n_s_pgparse;
+static PyObject *__pyx_n_s_pgparse_proto;
 static PyObject *__pyx_kp_s_pgparse_pyx;
 static PyObject *__pyx_n_s_position;
 static PyObject *__pyx_n_s_prepare;
-static PyObject *__pyx_n_s_protobuf;
 static PyObject *__pyx_n_s_protobuf_deparse;
 static PyObject *__pyx_n_s_protobuf_parse;
 static PyObject *__pyx_n_s_qualname;
@@ -4713,10 +4713,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pbbarray, __pyx_k_pbbarray, sizeof(__pyx_k_pbbarray), 0, 0, 1, 1},
   {&__pyx_n_s_pg_query_pb2, __pyx_k_pg_query_pb2, sizeof(__pyx_k_pg_query_pb2), 0, 0, 1, 1},
   {&__pyx_n_s_pgparse, __pyx_k_pgparse, sizeof(__pyx_k_pgparse), 0, 0, 1, 1},
+  {&__pyx_n_s_pgparse_proto, __pyx_k_pgparse_proto, sizeof(__pyx_k_pgparse_proto), 0, 0, 1, 1},
   {&__pyx_kp_s_pgparse_pyx, __pyx_k_pgparse_pyx, sizeof(__pyx_k_pgparse_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_position, __pyx_k_position, sizeof(__pyx_k_position), 0, 0, 1, 1},
   {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
-  {&__pyx_n_s_protobuf, __pyx_k_protobuf, sizeof(__pyx_k_protobuf), 0, 0, 1, 1},
   {&__pyx_n_s_protobuf_deparse, __pyx_k_protobuf_deparse, sizeof(__pyx_k_protobuf_deparse), 0, 0, 1, 1},
   {&__pyx_n_s_protobuf_parse, __pyx_k_protobuf_parse, sizeof(__pyx_k_protobuf_parse), 0, 0, 1, 1},
   {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
@@ -5141,7 +5141,7 @@ if (!__Pyx_RefNanny) {
  * """
  * import json             # <<<<<<<<<<<<<<
  * import typing
- * from protobuf import pg_query_pb2
+ * from pgparse_proto import pg_query_pb2
  */
   __Pyx_TraceLine(7,0,__PYX_ERR(0, 7, __pyx_L1_error))
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_json, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
@@ -5153,7 +5153,7 @@ if (!__Pyx_RefNanny) {
  * """
  * import json
  * import typing             # <<<<<<<<<<<<<<
- * from protobuf import pg_query_pb2
+ * from pgparse_proto import pg_query_pb2
  * from cpython.bytes cimport PyBytes_FromStringAndSize
  */
   __Pyx_TraceLine(8,0,__PYX_ERR(0, 8, __pyx_L1_error))
@@ -5165,7 +5165,7 @@ if (!__Pyx_RefNanny) {
   /* "pgparse.pyx":9
  * import json
  * import typing
- * from protobuf import pg_query_pb2             # <<<<<<<<<<<<<<
+ * from pgparse_proto import pg_query_pb2             # <<<<<<<<<<<<<<
  * from cpython.bytes cimport PyBytes_FromStringAndSize
  * 
  */
@@ -5175,7 +5175,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_pg_query_pb2);
   __Pyx_GIVEREF(__pyx_n_s_pg_query_pb2);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_pg_query_pb2);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_protobuf, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_pgparse_proto, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_pg_query_pb2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)

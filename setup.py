@@ -28,7 +28,7 @@ EXT_MODULES = [
 class BuildExt(build_ext.build_ext):
     def run(self):
         return_code = subprocess.call(
-            ['protoc', '-I', LIBPG_QUERY, '--python_out', '.', f'{LIBPG_QUERY}/protobuf/pg_query.proto'])
+            ['protoc', '-I', f'{LIBPG_QUERY}/protobuf', '--python_out', './pgparse_proto', f'{LIBPG_QUERY}/protobuf/pg_query.proto'])
         if return_code:
             sys.stderr.write('Failed to run protoc')
             sys.exit(return_code)
@@ -42,5 +42,6 @@ class BuildExt(build_ext.build_ext):
 
 setuptools.setup(
     cmdclass={'build_ext': BuildExt},
+    packages=['pgparse_proto'],
     ext_modules=EXT_MODULES if cythonize is None else cythonize(EXT_MODULES),
     zip_safe=False)

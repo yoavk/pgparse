@@ -6,7 +6,7 @@ The pgparse API is a direct wrapper of the functions provided by
 """
 import json
 import typing
-from protobuf import pg_query_pb2
+from pgparse_proto import pg_query_pb2
 from cpython.bytes cimport PyBytes_FromStringAndSize
 
 cdef extern from "pg_query.h" nogil:
