@@ -154,7 +154,7 @@ def parse_pgsql(function: str) -> typing.List[typing.Dict]:
             pg_query_free_plpgsql_parse_result(result)
 
 
-def protobuf_parse(statement: str) -> pg_query_pb2.ParseResult:
+def parse_protobuf(statement: str) -> pg_query_pb2.ParseResult:
     """Parse a SQL statement, returning a protobuf object
 
     :param statement: The SQL statement to parse
@@ -177,7 +177,7 @@ def protobuf_parse(statement: str) -> pg_query_pb2.ParseResult:
                 pg_query_free_protobuf_parse_result(result)
 
 
-def protobuf_deparse(parse_tree: pg_query_pb2.ParseResult) -> str:
+def deparse_protobuf(parse_tree: pg_query_pb2.ParseResult) -> str:
     """Deparse a protobuf object, returning an SQL statement
 
     :param parse_tree: Object to deparse

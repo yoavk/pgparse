@@ -1707,8 +1707,8 @@ static const char __pyx_k_pgparse_pyx[] = "pgparse.pyx";
 static const char __pyx_k_PGQueryError[] = "PGQueryError";
 static const char __pyx_k_pg_query_pb2[] = "pg_query_pb2";
 static const char __pyx_k_pgparse_proto[] = "pgparse_proto";
-static const char __pyx_k_protobuf_parse[] = "protobuf_parse";
-static const char __pyx_k_protobuf_deparse[] = "protobuf_deparse";
+static const char __pyx_k_parse_protobuf[] = "parse_protobuf";
+static const char __pyx_k_deparse_protobuf[] = "deparse_protobuf";
 static const char __pyx_k_serialized_bytes[] = "serialized_bytes";
 static const char __pyx_k_SerializeToString[] = "SerializeToString";
 static const char __pyx_k_PGQueryError___str[] = "PGQueryError.__str__";
@@ -1726,6 +1726,7 @@ static PyObject *__pyx_kp_s_Raised_when_invalid_or_unsupport;
 static PyObject *__pyx_n_s_SerializeToString;
 static PyObject *__pyx_kp_u_at_position;
 static PyObject *__pyx_n_s_cline_in_traceback;
+static PyObject *__pyx_n_s_deparse_protobuf;
 static PyObject *__pyx_n_s_doc;
 static PyObject *__pyx_n_s_fingerprint;
 static PyObject *__pyx_n_s_format;
@@ -1744,6 +1745,7 @@ static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_normalize;
 static PyObject *__pyx_n_s_parse;
 static PyObject *__pyx_n_s_parse_pgsql;
+static PyObject *__pyx_n_s_parse_protobuf;
 static PyObject *__pyx_n_s_parse_tree;
 static PyObject *__pyx_n_s_pbbarray;
 static PyObject *__pyx_n_s_pg_query_pb2;
@@ -1752,8 +1754,6 @@ static PyObject *__pyx_n_s_pgparse_proto;
 static PyObject *__pyx_kp_s_pgparse_pyx;
 static PyObject *__pyx_n_s_position;
 static PyObject *__pyx_n_s_prepare;
-static PyObject *__pyx_n_s_protobuf_deparse;
-static PyObject *__pyx_n_s_protobuf_parse;
 static PyObject *__pyx_n_s_qualname;
 static PyObject *__pyx_n_s_result;
 static PyObject *__pyx_n_s_self;
@@ -1769,8 +1769,8 @@ static PyObject *__pyx_pf_7pgparse_fingerprint(CYTHON_UNUSED PyObject *__pyx_sel
 static PyObject *__pyx_pf_7pgparse_2normalize(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_statement); /* proto */
 static PyObject *__pyx_pf_7pgparse_4parse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_statement); /* proto */
 static PyObject *__pyx_pf_7pgparse_6parse_pgsql(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_function); /* proto */
-static PyObject *__pyx_pf_7pgparse_8protobuf_parse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_statement); /* proto */
-static PyObject *__pyx_pf_7pgparse_10protobuf_deparse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_parse_tree); /* proto */
+static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_statement); /* proto */
+static PyObject *__pyx_pf_7pgparse_10deparse_protobuf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_parse_tree); /* proto */
 static PyObject *__pyx_pf_7pgparse_12PGQueryError___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_message, PyObject *__pyx_v_position); /* proto */
 static PyObject *__pyx_pf_7pgparse_12PGQueryError_2__str__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_codeobj_;
@@ -3498,24 +3498,24 @@ static PyObject *__pyx_pf_7pgparse_6parse_pgsql(CYTHON_UNUSED PyObject *__pyx_se
 /* "pgparse.pyx":157
  * 
  * 
- * def protobuf_parse(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
+ * def parse_protobuf(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
  *     """Parse a SQL statement, returning a protobuf object
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7pgparse_9protobuf_parse(PyObject *__pyx_self, PyObject *__pyx_v_statement); /*proto*/
-static char __pyx_doc_7pgparse_8protobuf_parse[] = "Parse a SQL statement, returning a protobuf object\n\n    :param statement: The SQL statement to parse\n    :raises: :py:exc:`pgparse.PGQueryError`\n\n    ";
-static PyMethodDef __pyx_mdef_7pgparse_9protobuf_parse = {"protobuf_parse", (PyCFunction)__pyx_pw_7pgparse_9protobuf_parse, METH_O, __pyx_doc_7pgparse_8protobuf_parse};
-static PyObject *__pyx_pw_7pgparse_9protobuf_parse(PyObject *__pyx_self, PyObject *__pyx_v_statement) {
+static PyObject *__pyx_pw_7pgparse_9parse_protobuf(PyObject *__pyx_self, PyObject *__pyx_v_statement); /*proto*/
+static char __pyx_doc_7pgparse_8parse_protobuf[] = "Parse a SQL statement, returning a protobuf object\n\n    :param statement: The SQL statement to parse\n    :raises: :py:exc:`pgparse.PGQueryError`\n\n    ";
+static PyMethodDef __pyx_mdef_7pgparse_9parse_protobuf = {"parse_protobuf", (PyCFunction)__pyx_pw_7pgparse_9parse_protobuf, METH_O, __pyx_doc_7pgparse_8parse_protobuf};
+static PyObject *__pyx_pw_7pgparse_9parse_protobuf(PyObject *__pyx_self, PyObject *__pyx_v_statement) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("protobuf_parse (wrapper)", 0);
+  __Pyx_RefNannySetupContext("parse_protobuf (wrapper)", 0);
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_statement), (&PyUnicode_Type), 1, "statement", 1))) __PYX_ERR(0, 157, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7pgparse_8protobuf_parse(__pyx_self, ((PyObject*)__pyx_v_statement));
+  __pyx_r = __pyx_pf_7pgparse_8parse_protobuf(__pyx_self, ((PyObject*)__pyx_v_statement));
 
   /* function exit code */
   goto __pyx_L0;
@@ -3526,7 +3526,7 @@ static PyObject *__pyx_pw_7pgparse_9protobuf_parse(PyObject *__pyx_self, PyObjec
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7pgparse_8protobuf_parse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_statement) {
+static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_statement) {
   PgQueryProtobufParseResult __pyx_v_result;
   PyObject *__pyx_v_stmt = 0;
   PyObject *__pyx_v_pbbarray = NULL;
@@ -3555,8 +3555,8 @@ static PyObject *__pyx_pf_7pgparse_8protobuf_parse(CYTHON_UNUSED PyObject *__pyx
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_TraceFrameInit(__pyx_codeobj__5)
-  __Pyx_RefNannySetupContext("protobuf_parse", 0);
-  __Pyx_TraceCall("protobuf_parse", __pyx_f[0], 157, 0, __PYX_ERR(0, 157, __pyx_L1_error));
+  __Pyx_RefNannySetupContext("parse_protobuf", 0);
+  __Pyx_TraceCall("parse_protobuf", __pyx_f[0], 157, 0, __PYX_ERR(0, 157, __pyx_L1_error));
 
   /* "pgparse.pyx":167
  *     cdef bytes stmt
@@ -3922,7 +3922,7 @@ static PyObject *__pyx_pf_7pgparse_8protobuf_parse(CYTHON_UNUSED PyObject *__pyx
   /* "pgparse.pyx":157
  * 
  * 
- * def protobuf_parse(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
+ * def parse_protobuf(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
  *     """Parse a SQL statement, returning a protobuf object
  * 
  */
@@ -3935,7 +3935,7 @@ static PyObject *__pyx_pf_7pgparse_8protobuf_parse(CYTHON_UNUSED PyObject *__pyx
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("pgparse.protobuf_parse", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pgparse.parse_protobuf", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_stmt);
@@ -3949,27 +3949,27 @@ static PyObject *__pyx_pf_7pgparse_8protobuf_parse(CYTHON_UNUSED PyObject *__pyx
 /* "pgparse.pyx":180
  * 
  * 
- * def protobuf_deparse(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
+ * def deparse_protobuf(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
  *     """Deparse a protobuf object, returning an SQL statement
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7pgparse_11protobuf_deparse(PyObject *__pyx_self, PyObject *__pyx_v_parse_tree); /*proto*/
-static char __pyx_doc_7pgparse_10protobuf_deparse[] = "Deparse a protobuf object, returning an SQL statement\n\n    :param parse_tree: Object to deparse\n    :raises: :py:exc:`pgparse.PGQueryError`\n\n    ";
-static PyMethodDef __pyx_mdef_7pgparse_11protobuf_deparse = {"protobuf_deparse", (PyCFunction)__pyx_pw_7pgparse_11protobuf_deparse, METH_O, __pyx_doc_7pgparse_10protobuf_deparse};
-static PyObject *__pyx_pw_7pgparse_11protobuf_deparse(PyObject *__pyx_self, PyObject *__pyx_v_parse_tree) {
+static PyObject *__pyx_pw_7pgparse_11deparse_protobuf(PyObject *__pyx_self, PyObject *__pyx_v_parse_tree); /*proto*/
+static char __pyx_doc_7pgparse_10deparse_protobuf[] = "Deparse a protobuf object, returning an SQL statement\n\n    :param parse_tree: Object to deparse\n    :raises: :py:exc:`pgparse.PGQueryError`\n\n    ";
+static PyMethodDef __pyx_mdef_7pgparse_11deparse_protobuf = {"deparse_protobuf", (PyCFunction)__pyx_pw_7pgparse_11deparse_protobuf, METH_O, __pyx_doc_7pgparse_10deparse_protobuf};
+static PyObject *__pyx_pw_7pgparse_11deparse_protobuf(PyObject *__pyx_self, PyObject *__pyx_v_parse_tree) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("protobuf_deparse (wrapper)", 0);
-  __pyx_r = __pyx_pf_7pgparse_10protobuf_deparse(__pyx_self, ((PyObject *)__pyx_v_parse_tree));
+  __Pyx_RefNannySetupContext("deparse_protobuf (wrapper)", 0);
+  __pyx_r = __pyx_pf_7pgparse_10deparse_protobuf(__pyx_self, ((PyObject *)__pyx_v_parse_tree));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7pgparse_10protobuf_deparse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_parse_tree) {
+static PyObject *__pyx_pf_7pgparse_10deparse_protobuf(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_parse_tree) {
   PgQueryDeparseResult __pyx_v_result;
   PgQueryProtobuf __pyx_v_serialized_parse_tree;
   PyObject *__pyx_v_serialized_bytes = NULL;
@@ -3999,8 +3999,8 @@ static PyObject *__pyx_pf_7pgparse_10protobuf_deparse(CYTHON_UNUSED PyObject *__
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_TraceFrameInit(__pyx_codeobj__6)
-  __Pyx_RefNannySetupContext("protobuf_deparse", 0);
-  __Pyx_TraceCall("protobuf_deparse", __pyx_f[0], 180, 0, __PYX_ERR(0, 180, __pyx_L1_error));
+  __Pyx_RefNannySetupContext("deparse_protobuf", 0);
+  __Pyx_TraceCall("deparse_protobuf", __pyx_f[0], 180, 0, __PYX_ERR(0, 180, __pyx_L1_error));
 
   /* "pgparse.pyx":190
  *     cdef PgQueryProtobuf serialized_parse_tree
@@ -4348,7 +4348,7 @@ static PyObject *__pyx_pf_7pgparse_10protobuf_deparse(CYTHON_UNUSED PyObject *__
   /* "pgparse.pyx":180
  * 
  * 
- * def protobuf_deparse(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
+ * def deparse_protobuf(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
  *     """Deparse a protobuf object, returning an SQL statement
  * 
  */
@@ -4361,7 +4361,7 @@ static PyObject *__pyx_pf_7pgparse_10protobuf_deparse(CYTHON_UNUSED PyObject *__
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("pgparse.protobuf_deparse", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pgparse.deparse_protobuf", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_serialized_bytes);
@@ -4691,6 +4691,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_SerializeToString, __pyx_k_SerializeToString, sizeof(__pyx_k_SerializeToString), 0, 0, 1, 1},
   {&__pyx_kp_u_at_position, __pyx_k_at_position, sizeof(__pyx_k_at_position), 0, 1, 0, 0},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
+  {&__pyx_n_s_deparse_protobuf, __pyx_k_deparse_protobuf, sizeof(__pyx_k_deparse_protobuf), 0, 0, 1, 1},
   {&__pyx_n_s_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 0, 1, 1},
   {&__pyx_n_s_fingerprint, __pyx_k_fingerprint, sizeof(__pyx_k_fingerprint), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
@@ -4709,6 +4710,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_normalize, __pyx_k_normalize, sizeof(__pyx_k_normalize), 0, 0, 1, 1},
   {&__pyx_n_s_parse, __pyx_k_parse, sizeof(__pyx_k_parse), 0, 0, 1, 1},
   {&__pyx_n_s_parse_pgsql, __pyx_k_parse_pgsql, sizeof(__pyx_k_parse_pgsql), 0, 0, 1, 1},
+  {&__pyx_n_s_parse_protobuf, __pyx_k_parse_protobuf, sizeof(__pyx_k_parse_protobuf), 0, 0, 1, 1},
   {&__pyx_n_s_parse_tree, __pyx_k_parse_tree, sizeof(__pyx_k_parse_tree), 0, 0, 1, 1},
   {&__pyx_n_s_pbbarray, __pyx_k_pbbarray, sizeof(__pyx_k_pbbarray), 0, 0, 1, 1},
   {&__pyx_n_s_pg_query_pb2, __pyx_k_pg_query_pb2, sizeof(__pyx_k_pg_query_pb2), 0, 0, 1, 1},
@@ -4717,8 +4719,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_pgparse_pyx, __pyx_k_pgparse_pyx, sizeof(__pyx_k_pgparse_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_position, __pyx_k_position, sizeof(__pyx_k_position), 0, 0, 1, 1},
   {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
-  {&__pyx_n_s_protobuf_deparse, __pyx_k_protobuf_deparse, sizeof(__pyx_k_protobuf_deparse), 0, 0, 1, 1},
-  {&__pyx_n_s_protobuf_parse, __pyx_k_protobuf_parse, sizeof(__pyx_k_protobuf_parse), 0, 0, 1, 1},
   {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
   {&__pyx_n_s_result, __pyx_k_result, sizeof(__pyx_k_result), 0, 0, 1, 1},
   {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
@@ -4791,26 +4791,26 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "pgparse.pyx":157
  * 
  * 
- * def protobuf_parse(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
+ * def parse_protobuf(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
  *     """Parse a SQL statement, returning a protobuf object
  * 
  */
   __pyx_tuple__13 = PyTuple_Pack(4, __pyx_n_s_statement, __pyx_n_s_result, __pyx_n_s_stmt, __pyx_n_s_pbbarray); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
-  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pgparse_pyx, __pyx_n_s_protobuf_parse, 157, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pgparse_pyx, __pyx_n_s_parse_protobuf, 157, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 157, __pyx_L1_error)
 
   /* "pgparse.pyx":180
  * 
  * 
- * def protobuf_deparse(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
+ * def deparse_protobuf(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
  *     """Deparse a protobuf object, returning an SQL statement
  * 
  */
   __pyx_tuple__14 = PyTuple_Pack(4, __pyx_n_s_parse_tree, __pyx_n_s_result, __pyx_n_s_serialized_parse_tree, __pyx_n_s_serialized_bytes); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pgparse_pyx, __pyx_n_s_protobuf_deparse, 180, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pgparse_pyx, __pyx_n_s_deparse_protobuf, 180, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 180, __pyx_L1_error)
 
   /* "pgparse.pyx":212
  * 
@@ -5239,27 +5239,27 @@ if (!__Pyx_RefNanny) {
   /* "pgparse.pyx":157
  * 
  * 
- * def protobuf_parse(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
+ * def parse_protobuf(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
  *     """Parse a SQL statement, returning a protobuf object
  * 
  */
   __Pyx_TraceLine(157,0,__PYX_ERR(0, 157, __pyx_L1_error))
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_9protobuf_parse, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_9parse_protobuf, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_protobuf_parse, __pyx_t_2) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parse_protobuf, __pyx_t_2) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pgparse.pyx":180
  * 
  * 
- * def protobuf_deparse(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
+ * def deparse_protobuf(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
  *     """Deparse a protobuf object, returning an SQL statement
  * 
  */
   __Pyx_TraceLine(180,0,__PYX_ERR(0, 180, __pyx_L1_error))
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_11protobuf_deparse, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_11deparse_protobuf, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_protobuf_deparse, __pyx_t_2) < 0) __PYX_ERR(0, 180, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_deparse_protobuf, __pyx_t_2) < 0) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pgparse.pyx":205
