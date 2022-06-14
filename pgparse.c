@@ -1498,9 +1498,6 @@ static PyTypeObject *__Pyx_ImportType(PyObject* module, const char *module_name,
 /* Import.proto */
 static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level);
 
-/* ImportFrom.proto */
-static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name);
-
 /* CalculateMetaclass.proto */
 static PyObject *__Pyx_CalculateMetaclass(PyTypeObject *metaclass, PyObject *bases);
 
@@ -1705,7 +1702,6 @@ static const char __pyx_k_fingerprint[] = "fingerprint";
 static const char __pyx_k_parse_pgsql[] = "parse_pgsql";
 static const char __pyx_k_pgparse_pyx[] = "pgparse.pyx";
 static const char __pyx_k_PGQueryError[] = "PGQueryError";
-static const char __pyx_k_pg_query_pb2[] = "pg_query_pb2";
 static const char __pyx_k_pgparse_proto[] = "pgparse_proto";
 static const char __pyx_k_parse_protobuf[] = "parse_protobuf";
 static const char __pyx_k_deparse_protobuf[] = "deparse_protobuf";
@@ -1748,7 +1744,6 @@ static PyObject *__pyx_n_s_parse_pgsql;
 static PyObject *__pyx_n_s_parse_protobuf;
 static PyObject *__pyx_n_s_parse_tree;
 static PyObject *__pyx_n_s_pbbarray;
-static PyObject *__pyx_n_s_pg_query_pb2;
 static PyObject *__pyx_n_s_pgparse;
 static PyObject *__pyx_n_s_pgparse_proto;
 static PyObject *__pyx_kp_s_pgparse_pyx;
@@ -3498,7 +3493,7 @@ static PyObject *__pyx_pf_7pgparse_6parse_pgsql(CYTHON_UNUSED PyObject *__pyx_se
 /* "pgparse.pyx":157
  * 
  * 
- * def parse_protobuf(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
+ * def parse_protobuf(statement: str) -> pgparse_proto.ParseResult:             # <<<<<<<<<<<<<<
  *     """Parse a SQL statement, returning a protobuf object
  * 
  */
@@ -3627,7 +3622,7 @@ static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx
  *             raise PGQueryError(
  *                 result.error.message.decode('utf-8'), result.error.cursorpos)             # <<<<<<<<<<<<<<
  *         pbbarray = PyBytes_FromStringAndSize(result.parse_tree.data, result.parse_tree.len)
- *         return pg_query_pb2.ParseResult().FromString(pbbarray)
+ *         return pgparse_proto.ParseResult().FromString(pbbarray)
  */
       __Pyx_TraceLine(172,0,__PYX_ERR(0, 172, __pyx_L4_error))
       __pyx_t_5 = __pyx_v_result.error->message;
@@ -3702,7 +3697,7 @@ static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx
  *             raise PGQueryError(
  *                 result.error.message.decode('utf-8'), result.error.cursorpos)
  *         pbbarray = PyBytes_FromStringAndSize(result.parse_tree.data, result.parse_tree.len)             # <<<<<<<<<<<<<<
- *         return pg_query_pb2.ParseResult().FromString(pbbarray)
+ *         return pgparse_proto.ParseResult().FromString(pbbarray)
  *     finally:
  */
     __Pyx_TraceLine(173,0,__PYX_ERR(0, 173, __pyx_L4_error))
@@ -3714,13 +3709,13 @@ static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx
     /* "pgparse.pyx":174
  *                 result.error.message.decode('utf-8'), result.error.cursorpos)
  *         pbbarray = PyBytes_FromStringAndSize(result.parse_tree.data, result.parse_tree.len)
- *         return pg_query_pb2.ParseResult().FromString(pbbarray)             # <<<<<<<<<<<<<<
+ *         return pgparse_proto.ParseResult().FromString(pbbarray)             # <<<<<<<<<<<<<<
  *     finally:
  *             with nogil:
  */
     __Pyx_TraceLine(174,0,__PYX_ERR(0, 174, __pyx_L4_error))
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_pg_query_pb2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 174, __pyx_L4_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_pgparse_proto); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 174, __pyx_L4_error)
     __Pyx_GOTREF(__pyx_t_10);
     __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_ParseResult); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 174, __pyx_L4_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -3764,7 +3759,7 @@ static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx
   }
 
   /* "pgparse.pyx":176
- *         return pg_query_pb2.ParseResult().FromString(pbbarray)
+ *         return pgparse_proto.ParseResult().FromString(pbbarray)
  *     finally:
  *             with nogil:             # <<<<<<<<<<<<<<
  *                 pg_query_free_protobuf_parse_result(result)
@@ -3813,7 +3808,7 @@ static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx
             }
 
             /* "pgparse.pyx":176
- *         return pg_query_pb2.ParseResult().FromString(pbbarray)
+ *         return pgparse_proto.ParseResult().FromString(pbbarray)
  *     finally:
  *             with nogil:             # <<<<<<<<<<<<<<
  *                 pg_query_free_protobuf_parse_result(result)
@@ -3888,7 +3883,7 @@ static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx
           }
 
           /* "pgparse.pyx":176
- *         return pg_query_pb2.ParseResult().FromString(pbbarray)
+ *         return pgparse_proto.ParseResult().FromString(pbbarray)
  *     finally:
  *             with nogil:             # <<<<<<<<<<<<<<
  *                 pg_query_free_protobuf_parse_result(result)
@@ -3922,7 +3917,7 @@ static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx
   /* "pgparse.pyx":157
  * 
  * 
- * def parse_protobuf(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
+ * def parse_protobuf(statement: str) -> pgparse_proto.ParseResult:             # <<<<<<<<<<<<<<
  *     """Parse a SQL statement, returning a protobuf object
  * 
  */
@@ -3949,7 +3944,7 @@ static PyObject *__pyx_pf_7pgparse_8parse_protobuf(CYTHON_UNUSED PyObject *__pyx
 /* "pgparse.pyx":180
  * 
  * 
- * def deparse_protobuf(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
+ * def deparse_protobuf(parse_tree: pgparse_proto.ParseResult) -> str:             # <<<<<<<<<<<<<<
  *     """Deparse a protobuf object, returning an SQL statement
  * 
  */
@@ -4348,7 +4343,7 @@ static PyObject *__pyx_pf_7pgparse_10deparse_protobuf(CYTHON_UNUSED PyObject *__
   /* "pgparse.pyx":180
  * 
  * 
- * def deparse_protobuf(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
+ * def deparse_protobuf(parse_tree: pgparse_proto.ParseResult) -> str:             # <<<<<<<<<<<<<<
  *     """Deparse a protobuf object, returning an SQL statement
  * 
  */
@@ -4713,7 +4708,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_parse_protobuf, __pyx_k_parse_protobuf, sizeof(__pyx_k_parse_protobuf), 0, 0, 1, 1},
   {&__pyx_n_s_parse_tree, __pyx_k_parse_tree, sizeof(__pyx_k_parse_tree), 0, 0, 1, 1},
   {&__pyx_n_s_pbbarray, __pyx_k_pbbarray, sizeof(__pyx_k_pbbarray), 0, 0, 1, 1},
-  {&__pyx_n_s_pg_query_pb2, __pyx_k_pg_query_pb2, sizeof(__pyx_k_pg_query_pb2), 0, 0, 1, 1},
   {&__pyx_n_s_pgparse, __pyx_k_pgparse, sizeof(__pyx_k_pgparse), 0, 0, 1, 1},
   {&__pyx_n_s_pgparse_proto, __pyx_k_pgparse_proto, sizeof(__pyx_k_pgparse_proto), 0, 0, 1, 1},
   {&__pyx_kp_s_pgparse_pyx, __pyx_k_pgparse_pyx, sizeof(__pyx_k_pgparse_pyx), 0, 0, 1, 0},
@@ -4791,7 +4785,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "pgparse.pyx":157
  * 
  * 
- * def parse_protobuf(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
+ * def parse_protobuf(statement: str) -> pgparse_proto.ParseResult:             # <<<<<<<<<<<<<<
  *     """Parse a SQL statement, returning a protobuf object
  * 
  */
@@ -4803,7 +4797,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "pgparse.pyx":180
  * 
  * 
- * def deparse_protobuf(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
+ * def deparse_protobuf(parse_tree: pgparse_proto.ParseResult) -> str:             # <<<<<<<<<<<<<<
  *     """Deparse a protobuf object, returning an SQL statement
  * 
  */
@@ -5141,7 +5135,7 @@ if (!__Pyx_RefNanny) {
  * """
  * import json             # <<<<<<<<<<<<<<
  * import typing
- * from pgparse_proto import pg_query_pb2
+ * import pgparse_proto
  */
   __Pyx_TraceLine(7,0,__PYX_ERR(0, 7, __pyx_L1_error))
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_json, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
@@ -5153,7 +5147,7 @@ if (!__Pyx_RefNanny) {
  * """
  * import json
  * import typing             # <<<<<<<<<<<<<<
- * from pgparse_proto import pg_query_pb2
+ * import pgparse_proto
  * from cpython.bytes cimport PyBytes_FromStringAndSize
  */
   __Pyx_TraceLine(8,0,__PYX_ERR(0, 8, __pyx_L1_error))
@@ -5165,24 +5159,15 @@ if (!__Pyx_RefNanny) {
   /* "pgparse.pyx":9
  * import json
  * import typing
- * from pgparse_proto import pg_query_pb2             # <<<<<<<<<<<<<<
+ * import pgparse_proto             # <<<<<<<<<<<<<<
  * from cpython.bytes cimport PyBytes_FromStringAndSize
  * 
  */
   __Pyx_TraceLine(9,0,__PYX_ERR(0, 9, __pyx_L1_error))
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_pgparse_proto, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_INCREF(__pyx_n_s_pg_query_pb2);
-  __Pyx_GIVEREF(__pyx_n_s_pg_query_pb2);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_pg_query_pb2);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_pgparse_proto, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pgparse_proto, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_pg_query_pb2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pg_query_pb2, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pgparse.pyx":64
  * 
@@ -5192,10 +5177,10 @@ if (!__Pyx_RefNanny) {
  * 
  */
   __Pyx_TraceLine(64,0,__PYX_ERR(0, 64, __pyx_L1_error))
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_1fingerprint, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_fingerprint, __pyx_t_2) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_1fingerprint, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_fingerprint, __pyx_t_1) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pgparse.pyx":90
  * 
@@ -5205,10 +5190,10 @@ if (!__Pyx_RefNanny) {
  * 
  */
   __Pyx_TraceLine(90,0,__PYX_ERR(0, 90, __pyx_L1_error))
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_3normalize, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_normalize, __pyx_t_2) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_3normalize, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_normalize, __pyx_t_1) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pgparse.pyx":112
  * 
@@ -5218,10 +5203,10 @@ if (!__Pyx_RefNanny) {
  *     internal PostgreSQL parse tree for the query.
  */
   __Pyx_TraceLine(112,0,__PYX_ERR(0, 112, __pyx_L1_error))
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_5parse, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parse, __pyx_t_2) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_5parse, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parse, __pyx_t_1) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pgparse.pyx":135
  * 
@@ -5231,36 +5216,36 @@ if (!__Pyx_RefNanny) {
  * 
  */
   __Pyx_TraceLine(135,0,__PYX_ERR(0, 135, __pyx_L1_error))
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_7parse_pgsql, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parse_pgsql, __pyx_t_2) < 0) __PYX_ERR(0, 135, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_7parse_pgsql, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parse_pgsql, __pyx_t_1) < 0) __PYX_ERR(0, 135, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pgparse.pyx":157
  * 
  * 
- * def parse_protobuf(statement: str) -> pg_query_pb2.ParseResult:             # <<<<<<<<<<<<<<
+ * def parse_protobuf(statement: str) -> pgparse_proto.ParseResult:             # <<<<<<<<<<<<<<
  *     """Parse a SQL statement, returning a protobuf object
  * 
  */
   __Pyx_TraceLine(157,0,__PYX_ERR(0, 157, __pyx_L1_error))
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_9parse_protobuf, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parse_protobuf, __pyx_t_2) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_9parse_protobuf, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parse_protobuf, __pyx_t_1) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pgparse.pyx":180
  * 
  * 
- * def deparse_protobuf(parse_tree: pg_query_pb2.ParseResult) -> str:             # <<<<<<<<<<<<<<
+ * def deparse_protobuf(parse_tree: pgparse_proto.ParseResult) -> str:             # <<<<<<<<<<<<<<
  *     """Deparse a protobuf object, returning an SQL statement
  * 
  */
   __Pyx_TraceLine(180,0,__PYX_ERR(0, 180, __pyx_L1_error))
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_11deparse_protobuf, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_deparse_protobuf, __pyx_t_2) < 0) __PYX_ERR(0, 180, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7pgparse_11deparse_protobuf, NULL, __pyx_n_s_pgparse); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_deparse_protobuf, __pyx_t_1) < 0) __PYX_ERR(0, 180, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pgparse.pyx":205
  * 
@@ -5270,14 +5255,14 @@ if (!__Pyx_RefNanny) {
  * 
  */
   __Pyx_TraceLine(205,0,__PYX_ERR(0, 205, __pyx_L1_error))
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
   __Pyx_GIVEREF(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
-  PyTuple_SET_ITEM(__pyx_t_2, 0, ((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
-  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_PGQueryError, __pyx_n_s_PGQueryError, (PyObject *) NULL, __pyx_n_s_pgparse, __pyx_kp_s_Raised_when_invalid_or_unsupport); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 205, __pyx_L1_error)
+  PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
+  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_1, __pyx_n_s_PGQueryError, __pyx_n_s_PGQueryError, (PyObject *) NULL, __pyx_n_s_pgparse, __pyx_kp_s_Raised_when_invalid_or_unsupport); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 205, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
   /* "pgparse.pyx":212
@@ -5313,13 +5298,13 @@ if (!__Pyx_RefNanny) {
  * 
  */
   __Pyx_TraceLine(205,0,__PYX_ERR(0, 205, __pyx_L1_error))
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_PGQueryError, __pyx_t_2, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_PGQueryError, __pyx_t_1, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 205, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_PGQueryError, __pyx_t_4) < 0) __PYX_ERR(0, 205, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pgparse.pyx":1
  * # cython: language_level=3, linetrace=True, linetrace=True, linetrace=True             # <<<<<<<<<<<<<<
@@ -5327,10 +5312,10 @@ if (!__Pyx_RefNanny) {
  * The pgparse API is a direct wrapper of the functions provided by
  */
   __Pyx_TraceLine(1,0,__PYX_ERR(0, 1, __pyx_L1_error))
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_TraceReturn(Py_None, 0);
 
   /*--- Wrapped vars code ---*/
@@ -6512,20 +6497,6 @@ bad:
     Py_XDECREF(empty_list);
     Py_XDECREF(empty_dict);
     return module;
-}
-
-/* ImportFrom */
-static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name) {
-    PyObject* value = __Pyx_PyObject_GetAttrStr(module, name);
-    if (unlikely(!value) && PyErr_ExceptionMatches(PyExc_AttributeError)) {
-        PyErr_Format(PyExc_ImportError,
-        #if PY_MAJOR_VERSION < 3
-            "cannot import name %.230s", PyString_AS_STRING(name));
-        #else
-            "cannot import name %S", name);
-        #endif
-    }
-    return value;
 }
 
 /* CalculateMetaclass */

@@ -24,6 +24,9 @@ jobs:
       - name: Build extension
         run: USE_CYTHON=1 python3 setup.py build_ext --force --inplace
 
+      - name: Build proto file
+        run: USE_PROTOC=1 python3 setup.py build_py --force
+
       - name: Build package
         run: python3 setup.py sdist
 
