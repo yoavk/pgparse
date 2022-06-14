@@ -43,16 +43,16 @@ class BuildExt(build_ext.build_ext):
 
 
 class BuildPyCommand(setuptools.command.build_py.build_py):
-  def run(self):
-      if protoc:
-          return_code = subprocess.call(
-              [protoc, '-I', f'{LIBPG_QUERY}/protobuf', '--python_out', '.',
-               f'{LIBPG_QUERY}/protobuf/pg_query.proto'])
-          if return_code:
-              sys.stderr.write('Failed to run protoc')
-              sys.exit(return_code)
-          os.rename('pg_query_pb2.py', 'pgparse_proto.py')
-      setuptools.command.build_py.build_py.run(self)
+    def run(self):
+        if protoc:
+            return_code = subprocess.call(
+                [protoc, '-I', f'{LIBPG_QUERY}/protobuf', '--python_out', '.',
+                 f'{LIBPG_QUERY}/protobuf/pg_query.proto'])
+            if return_code:
+                sys.stderr.write('Failed to run protoc')
+                sys.exit(return_code)
+            os.rename('pg_query_pb2.py', 'pgparse_proto.py')
+        setuptools.command.build_py.build_py.run(self)
 
 
 setuptools.setup(
